@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: AdihausDIN, Helvetica, Arial, Helvetica, sans-serif;
+        }
+
+         .nav-bar{
+            width: 100%;
+            z-index: 1;
+            position: fixed;
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            padding: 5px 100px;
+            top: 0;
+
+        }
+        .nav-bar p{
+            margin-right: 10px;
+        }
+        .logo{
+            color: black;
+            margin-left: 5% !important;
+            background-color: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            
+        }
+        a {
+            text-decoration: none;
+            }
+
+        .logo:hover{
+            color: white;
+            background-color: black;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 3px 2px;
+        }
+
+        .setores{
+            margin-left: 25%;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;}
+        .setores p{
+            color: white;
+            margin-top: 20px;
+            margin-right: 50px;
+            transition: all 0.3s ease;
+            
+        }
+ 
+        .setores p:hover{
+            color: black    ;
+            display: inline-block;
+            border-bottom: 2px solid #e9891e;
+            transform: scale(1.1);
+            box-shadow: 0px 0px 3px 2px #e9891e;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 5px 13px; /* afasta a linha do texto */
+            margin-bottom: 20px; /* espaço externo, se quiser */
+        }
+        
+        .barra-de-busca{
+            margin: 20px 10px 5px 15%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .barra-de-busca:hover{
+            transform: scale(1.1);
+        }
+
+        .barra-de-busca input{
+            padding: 10px 10px 10px 40px;
+            border-radius: 40px;
+            transition: all 0.1s ease;
+        } 
+        .barra-de-busca input:hover{
+            box-shadow: 0px 0px 5px 1px white;
+            background-color: white;
+            border-color: black;
+        }  
+
+        .barra-de-busca img{
+            position: absolute;
+            margin: 10px 0px 0px 10px;
+        }
+        h2{
+            transform: translate( 150px, 200px);
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        .imagens-tenis{
+            display: grid;
+            max-width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            
+            justify-content: center;
+            align-items: center;
+            transform: translate( 200px, 200px);
+        }
+
+        .bloco-img{
+            position: relative;
+        }
+        .img-1{
+            
+            position: absolute;
+            opacity: 1;
+            transition: 0.3s ease-in-out;
+        }
+
+        .img-1:hover{
+        
+            opacity: 0;;
+        }
+        .img-2{
+
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        .img-2:hover{
+        
+            opacity: 1;;
+        }
+
+        .bloco-img{
+
+            margin: 20px 190px 20px 0px;
+        }
+
+        .bloco-img h6{
+            font-size: 19px;
+            margin-bottom: 10px;
+            
+        }
+        .bloco-img a{
+            color: gray;            
+        }
+        .bloco-img p{
+            margin-right: 10px;          
+            margin-top: 20px;
+        }
+        .preço-tenis{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .preço-tenis p:nth-child(2){
+             color: gray;
+             text-decoration: line-through;
+        }
+        .preço-tenis p:nth-child(3){
+            color: green;
+        }
+
+    </style>
+<body>
+    <head>
+        <div class="nav-bar">
+            <a href="index.html" ><p class="logo">Nike</p></a>
+            <div class="setores">
+                <p>Lançamentos</p>
+                <a href="calçados.html"><p>Calçados</p></a>
+                <p>Masculino</p>
+                <p>Infantil</p>
+            </div>
+            <div class="barra-de-busca">
+                
+                <img src="data:image/png;base64,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" style="width: 20x; height: 20px;" >
+            <input id="campoBusca" type="text" placeholder="Buscar">
+            <div id="loading" style="display: none;">Carregando...</div>
+            </div>
+        </div>
+    </head>
+
+    <main>
+        <H2>Calçados para adultos Masculino/Feminino</H2>
+        <div class="imagens-tenis">
+            <div class="bloco-img">
+                <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+                <img class="img-2" src="tenis frente (1).png" style="width: 400px; height: 400px;">
+                <h6>Tenis jordan Heir</h6>
+                <a>Casual</a>
+                <div class="preço-tenis"> <p>R$ 499,99 no Pix</p> <p>R$ 599,99</p> <p>20% off</p></div>
+            </div>
+            <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+            <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+            <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+            <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+            <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+            <img class="img-1" src="tenis lado.png" style="width: 400px; height: 400px;">
+        </div>
+    </main>
+
+</body>
+</html>
