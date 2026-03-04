@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Gradiente suave */
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-bar {
+        display: flex;
+        justify-content: space-between; /* Alinha os itens da barra de navegação */
+        padding: 10px 50px;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .nav-bar p {
+        color: white;
+        margin-right: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .logo {
+        margin-left: 5%;
+        padding: 10px 30px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+        color: white;
+        background-color: rgb(29, 29, 29);
+        transform: scale(1.1);
+        box-shadow: 0px 0px 3px 2px;
+    }
+
+    .setores {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .setores p {
+        margin-top: 20px;
+        margin-right: 50px;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .setores p:hover {
+        color: black;
+        display: inline-block;
+        border-bottom: 2px solid #e9891e;
+        transform: scale(1.1);
+        box-shadow: 0px 0px 3px 2px #e9891e;
+        background-color: white;
+        border-radius: 10px;
+        padding: 5px 13px;
+    }
+
+    .barra-de-busca {
+        margin: 20px 10px 5px 15%;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .barra-de-busca:hover {
+        transform: scale(1.1);
+    }
+
+    .barra-de-busca input {
+        padding: 10px 10px 10px 40px;
+        border-radius: 40px;
+        transition: all 0.1s ease;
+    }
+
+    .barra-de-busca input:hover {
+        box-shadow: 0px 0px 5px 1px white;
+        background-color: white;
+        border-color: black;
+    }
+
+    .barra-de-busca img {
+        position: absolute;
+        margin: 10px 0px 0px 10px;
+    }
+
+    .centro h3 {
+        position: absolute;
+        margin: 38% 0px 0px 80%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0px 3px 0px 3px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .centro h6 {
+        font-size: 14px;
+        position: absolute;
+        margin: 43% 0px 0px 61.8%;
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0px 3px 0px 3px;
+    }
+
+    .button-garanta-o-seu {
+        font-size: 50px;
+        position: absolute;
+        margin: 40% 0px 0px 5%;
+        padding: 20px 80px 20px 20px;
+        padding-left: 100px;
+        background-color: #e9891e;
+        color: cornsilk;
+        box-shadow: 0px 3px 0px 2px white;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .button-garanta-o-seu:hover {
+        transform: scale(1.05);
+        background-color: cornsilk;
+        color: #e9891e;
+    }
+
+    .baixo-centro {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .baixo-centro h1 {
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .baixo-centro p {
+        font-size: 20px;
+        margin: 4px 300px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: gray;
+    }
+
+    .pack-4-fotos {
+        background-color: whitesmoke;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+        gap: 15px;
+        justify-items: center;
+        padding: 20px;
+    }
+
+    .pack-4-fotos img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+    }
+
+    .texto-da-img {
+        color: white;
+        position: absolute;
+        margin: 300px 0px 0px 30px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .texto-da-img h6 {
+        font-size: 15px;
+    }
+
+    .texto-da-img h1 {
+        margin-top: -30px;
+        font-size: 30px;
+    }
+
+    .texto-da-img h2 {
+        font-size: 20px;
+        color: white;
+        margin: 10px 400px 0px 0px;
+        border-radius: 20px;
+        padding: 20px;
+        background-color: black;
+        box-shadow: 0px 0px 4px 2px white;
+        transition: all 0.3s ease;
+    }
+
+    .texto-da-img h2:hover {
+        transform: scale(1.07);
+    }
+
+    /* Media Queries para responsividade */
+    @media (max-width: 768px) {
+        .nav-bar {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .setores p {
+            margin-right: 20px;
+            font-size: 16px;
+        }
+
+        .pack-4-fotos {
+            grid-template-columns: 1fr;
+        }
+
+        .centro h3 {
+            font-size: 25px;
+            margin: 50% 0px 0px 40%;
+        }
+    }
+
+</style>
+
+<body>
+    <div class="nav-bar">
+        <p class="logo">Nike</p>
+        <div class="setores">
+            <p>Lançamentos</p>
+            <p>Catalogo</p>
+            <p>Masculino</p>
+            <p>Infantil</p>
+        </div>
+        <div class="barra-de-busca">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8jHyAAAAAhHh8gHh8kHiAgHB0cGBkFAAAjICH8/PweGhvFxcW9vb0ZFBUdGBnr6+sSDg/Pz8/y8vK1tLUVEhPZ2dmxsbFUU1RLSkt3dnY5Nzjn5eaoqKiEhISQjo+ZmZlaWlo7OTppaGmLi4tgX2AxLzAqKSmioqKWlZZ6enptbW1DQkNLSkoMAAXMyssJubmvAAAISklEQVR4nO2daXuyOhCGNVBWRaKi1uK+W+v7///dgVrbTECLMD1J6dyf21x5yGRmMllsNAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAjiD+F5vZ7nqe7FT9DrDmer0WnHUqLt8+K4b8eqO4VGPBwnyngQdHyrmWJZfhAEidTF4d/vH8/B+oXx6KIsQ4ezaNMPVfexAuEhkXdD3QeW7USrluqOlqS7Yty/K+8qkm3nPdW9fZzWM7M/JDx9p9G1OZv+MmPtnljnU8C3ChMMzg6/yOuEr8w3CsgSME2Tu33VHS/KhEfuY/recZts9CtiZDhiZgl9qcJmh01Ud/97+swvMu9uwRa6e9UpM8tY6NdABm5XtYZ7eKOze1OgaxhGkrBZ1v0cwGcaO5xwyW/12wp4kpvy7enteelyzs5R59afmuygWsgt4sTE8oKEZZ/Z9nXSiq8Bz+sN+odFssiw80bcNNlUqY6bDLI5Wtp/33E2w9yEpTtbsijP75ps/H93vghxbhJqs7fhHe84OEbnnGlpno8N7TKc0M0R2HE233nG3n7nZDS62hmq1+gtg8yUMthiUOSf906Umb4G2/94rx9jlPWi3C267usdWdZUmV6rxuNZ7qDFpl6jcNGp+8LlYTSYTklqP5OKBrvHhsA7Mvkb2Ut9nE3IDDgJXf788IK2n7FUro+3GdmSl2GrEs6+e4be+MnVZiruJQMr6+rjne2CdYnV1GOhEXNTEjgr2VK49ZtPokZ+RO1pWVYRnIMVgnVoWrCqw4oE1J+mC/2oy1cVGhswAyi0n9H6WZ4T9A9BtT61wZx2dYj7LSb6UdfahdWi2By6Lf8FqZ/lOdlih8zq33wBpzVrY/SyAv+gVTnVg3Qo7nS4Tf8NoZdV2MAhdBESrSGwe0OxO41hqoXjF4DvMuxXjDZLc+Bi/AoWKI12geVbkcrExtuKQ4hmUKsAzO0hTqulgF/b3iA1O2CiZfgjpGbLMBVX9i5Dq1ZvbEGhxRVuLQIj9fEyLCEGJX5VoZnGwK8jdsTbijWNoEqmW42JaKRPDqLPm4ktGxFeww/yKvo8ND+TMmDCRHTVBX3zaxoayLMFzHCuaiL2wDRkqB7vKJpHoGqp3xUVWlvUtvtiAbajKiJOxGJ8gJs+hiCX4KhtF2ctHrngyGcMHFEhU5SaboS5gl7bHKXLsqtDVeVMRx1RIfIuwzgQFSqq1iyFdZzBkQ1pzgWF2FOgKEI4TNJj5MaHosJIzWaiJ7o7a4fcevssKlRzOqMHFC6RW285T18KgzVy68WACk/Irb8rvBKRwp8BzkPs2jRUWHY3qxoeSDts5Nb7QOEcufWCbEG0QN50B6trVfHwTTx85yCXi9aiQlXHFRfiGg47dQQ1U7wq3mOMxU5w5M8MFvmqjtbMRYXIDt2D9QNFJ2v6ojNFXoeD+oGPnTAVJQbrcNzvvOeCQnUFU6gQ1RtsxLWnqnD4sQ7/kYkI8iWFZ6NAZRr1TEFfVGioKtOk5zDAl0aMiCvROnzsrL44PfG8lxvh1W2lWqKalcU7C/FTG3jb0Qdw4lhVRpMyAcsLjlVN8VwxoUEvkDxCDM4uWxhnTVLgh4uUHqSFx2nOc5RG4RAqNVL5oB1S9f0AhhC9xvUY3g587gDjNk8Iku6mo/jixRx4PQvDosCys2mcFZ+E7n0c+/r47Na2srMZQsNXVGYTmHJgU7yqncbSIwy4W8tlCOEhaJNV23P3tvDIsdpQcQHmH0ma/K9Kaxvp/hT2llYZPBdeRrCcCkWVsSQQKcJWpM/gpSx/V1riLAkU4ll9v7rjQkG+FGSXlTiTLt9ocy0olgax6Vullopj+fpaZceMxgR27SmJ/I+fsPc2jvShrJ0eNpqyiaDCEnfqB1t4C6GpOuWG9Hby3UGXjR4K1UPuG9JDNo5WDw8MmCnfcg0e2DAKF9mLwJXuT/0A7eyLHxZbFjMz78BsWZ9Wd2QvzGWH+q5x871T9SYub2Zuund2yvPRDLnvtgRs0bo7FuGhmfeogs91ush95Zj7NI3NtutbA9nrb5zc99x85/ovU5WXLTJMcww1tdWI7Y59eUy87nzBmJ37Vk0nugocMr1eq1ln7tRfRaav04zGh0m7ldDfTzc7xqLgxl9fsz6v0WKmqZfEiXwxH5hewLnzDue2Ydx8jIgvr06mmzZn6CWxxe1CD9DdwVldXVN8efTE0ktivMw8cPEQ1jXd89Jb8Jdh1mwUvWnOOyVFcfnuM0noOp/1DM3mYqObRPBsCC82gOPP4NlK5+BlrrraSUyGMc3CHrVWy3n5WvAO3wtcn99JM0NNEvERK/JyKSBy9l/Zj5wgubqNYmJky0eevzSMgE3FqlpbfvAmiYuqr61naI1YcCc6ir33HWctVQ1bmeRBO0NNGIwj1vnWsSZJ3WmSrYq2sy5ZQ4mN3nDBneCmSNfwOdtN8xPztmNIlVgdRzEh7L/azImyKbYfRIydZt2bi6vsolo/d3MlHk5HiZxE6AWevsx+Wu1b90v2bXmtoqFHFekNWsP9fLaeHfaTfjcuUqNoZ17Y0tRQy5M11BpKzD5UV3uJZerpWtPKPOent7spQZ5H1ao8VZ125n1TzVb91fkTHjXz2nD9JMqGWsNR/F0JXAkyo1hHiaY0GWtnqH8i9MvupoYS/4C7kcNiDSUa8pmbuklsZRI4/qbbiYaKyAlc7QSK7ibdp+Sjhn4/E1GVz1FMFEaj2slL+TJU/lxLgZ9FRperfoD357gsiXk9TfRCmsAlAmusMJFYwzABadddYPrLwrWXSBAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQdSf/wAgtmpzz5jU6QAAAABJRU5ErkJggg==" style="width: 20px; height: 20px;">
+            <input type="text" placeholder="Buscar">
+        </div>
+    </div>
+
+    <div class="centro">
+        <h3>O Novo Tenis da loja</h3>
+        <h6>Confira logo nosso novo tenis exclusico e muito confortavel em ediçao limitada</h6>
+        <button class="button-garanta-o-seu">Garanta o seu</button>
+        <img src="ChatGPT Image Aug 6, 2025, 03_50_09 AM.png" style="width: 100%; height: 900px;" alt="">
+    </div>
+
+    <div class="baixo-centro">
+        <h1>Edição Lorem Impus</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quam deleniti possimus exercitationem, quisquam dignissimos perferendis odit? Itaque incidunt quasi laudantium nam, minus placeat rerum excepturi temporibus, quidem facilis officia?</p>
+    </div>
+
+    <div class="pack-4-fotos">
+        <div>
+            <div class="texto-da-img">
+                <h6>Dia dos pais</h6>
+                <h1>O melhor para presentear quem você ama</h1>
+                <h2>Ver produtos</h2>
+            </div>
+            <img src="4-4.png" alt="">
+        </div>
+        <div>
+            <div class="texto-da-img">
+                <h6>Dia dos pais</h6>
+                <h1>O melhor para presentear quem você ama</h1>
+                <h2>Ver produtos</h2>
+            </div>
+            <img src="4-4.png" alt="">
+        </div>
+        <div>
+            <div class="texto-da-img">
+                <h6>Dia dos pais</h6>
+                <h1>O melhor para presentear quem você ama</h1>
+                <h2>Ver produtos</h2>
+            </div>
+            <img src="4-4.png" alt="">
+        </div>
+        <div>
+            <div class="texto-da-img">
+                <h6>Dia dos pais</h6>
+                <h1>O melhor para presentear quem você ama</h1>
+                <h2>Ver produtos</h2>
+            </div>
+            <img src="4-4.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
